@@ -8,6 +8,8 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
      print: './src/print.js'
    },
     
+    devtool: 'inline-source-map',
+    
    plugins: [
      new CleanWebpackPlugin(['dist']),
 

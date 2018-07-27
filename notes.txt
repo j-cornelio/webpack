@@ -7,3 +7,5 @@ by default will generate its own index.html file, even though we already have on
 Cleaning up the /dist folder 
 /dist folder has become quite cluttered. clean the /dist folder before each build, so that only used files will be generated. Let's take care of that.
 
+source maps
+In order to make it easier to track down errors and warnings, JavaScript offers source maps, which maps your compiled code back to your original source code
