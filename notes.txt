@@ -33,15 +33,32 @@ is one of the most useful features offered by webpack. It allows all kinds of mo
 Tree shaking 
 term commonly used in the JavaScript context for dead-code elimination.
 
+> Add Utility
+
 Set the mode configuration option to development to make sure that the bundle is not minified:
 
+mode: "development"
 
-Mark the file as side-effect-free
+> Mark the file as side-effect-free
 A "side effect" is defined as code that performs a special behavior when imported, other than exposing one or more exports.
 
 If your code did have some side effects though, an array can be provided
 
 Note - that any imported file is subject to tree shaking. This means if you use something like css-loader in your project and import a CSS file, it needs to be added to the side effect list so it will not be unintentionally dropped in production mode
+
+
+> Minify the Output
+we'll use the -p (production) webpack compilation flag to enable UglifyJSPlugin.
+
+mode: "production"
+
+Notice anything different about dist/bundle.js? Clearly the whole bundle is now minified and mangled, but, if you look carefully, you won't see the square function included but will see a mangled version of the cube function (function r(e){return e*e*e}n.a=r). With minification and tree shaking our bundle is now a few bytes smaller! 
+
+You can imagine your application as a tree. The source code and libraries you actually use represent the green, living leaves of the tree. Dead code represents the brown, dead leaves of the tree that are consumed by autumn. In order to get rid of the dead leaves, you have to shake the tree, causing them to fall.
+
+
+
+
 
 --------------------------------------
 
