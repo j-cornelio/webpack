@@ -1,4 +1,3 @@
-import './style.css';
 import { cube } from './math.js';
  import printMe from './print.js';
 

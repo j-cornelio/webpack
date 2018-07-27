@@ -61,7 +61,15 @@ You can imagine your application as a tree. The source code and libraries you ac
 
 
 --------------------------------------
+Production
 
+In development, we want strong source mapping and a localhost server with live reloading or hot module replacement. In production, our goals shift to a focus on minified bundles, lighter weight source maps, and optimized assets to improve load time. With this logical separation at hand, we typically recommend writing separate webpack configurations for each environment.
+
+webpack.common.js - setup our entry and output configuration and we've included any plugins that are required for both environments. 
+
+webpack.dev.js - set mode to development. Also, we've added the recommended devtool for that environment (strong source mapping), as well as our simple devServer configuration. 
+
+webpack.prod.js - mode is set to production which loads UglifyJSPlugin which was first introduced by the tree shaking guide.
 
 --------------------------------------
 
