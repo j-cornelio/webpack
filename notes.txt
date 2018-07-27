@@ -71,6 +71,14 @@ webpack.dev.js - set mode to development. Also, we've added the recommended devt
 
 webpack.prod.js - mode is set to production which loads UglifyJSPlugin which was first introduced by the tree shaking guide.
 
+repoint scripts to the new configurations:
+development - webpack-dev-server
+npm start - script 
+production - npm run build script
+
+
+webpack v4+ will minify your code by default in production mode.
+
 --------------------------------------
 
 
