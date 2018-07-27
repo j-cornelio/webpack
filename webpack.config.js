@@ -9,7 +9,11 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
    },
     
     devtool: 'inline-source-map',
-    
+
+    devServer: {
+     contentBase: './dist'
+   },
+
    plugins: [
      new CleanWebpackPlugin(['dist']),
 
