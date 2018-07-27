@@ -35,6 +35,14 @@ term commonly used in the JavaScript context for dead-code elimination.
 
 Set the mode configuration option to development to make sure that the bundle is not minified:
 
+
+Mark the file as side-effect-free
+A "side effect" is defined as code that performs a special behavior when imported, other than exposing one or more exports.
+
+If your code did have some side effects though, an array can be provided
+
+Note - that any imported file is subject to tree shaking. This means if you use something like css-loader in your project and import a CSS file, it needs to be added to the side effect list so it will not be unintentionally dropped in production mode
+
 --------------------------------------
 
 
